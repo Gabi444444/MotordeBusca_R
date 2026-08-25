@@ -20,6 +20,9 @@ strings <- lapply(textos,Quebra)
 dict <- sort(unique(unlist(strings)))
 freq <- table(unlist(strings))
 
+cat("10 palavras mais comuns: \n")
+print(sort(freq, decreasing = TRUE)[1:10])
+
 tabelafreq <- sapply(strings, function(tk) {
   as.integer(table(factor(tk, levels = dict)))
   })
